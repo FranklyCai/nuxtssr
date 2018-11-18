@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxt -c client/nuxt.config.js",
+    "build": "nuxt build -c client/nuxt.config.js",
+    "start": "nuxt start -c client/nuxt.config.js",
+    "lint": "vue-cli-service lint client/"
+  },
+  "dependencies": {
+    "@nuxtjs/router": "^1.1.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "dotenv": "^6.1.0",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "nuxt": "^2.3.1",
+    "popper.js": "^1.14.3",
+    "sweetalert2": "^7.19.3",
+    "vform": "^1.0.0",
+    "vue-i18n": "^8.3.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1"
+  }
+}
