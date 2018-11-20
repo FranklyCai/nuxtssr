@@ -48,7 +48,7 @@ export const actions = {
 
   async fetchUser ({ commit }) {
     try {
-      const { data } = await axios.get('/user')
+      const { data } = await axios.get('/public/user')
 
       commit('FETCH_USER_SUCCESS', data)
     } catch (e) {
@@ -64,7 +64,7 @@ export const actions = {
 
   async logout ({ commit }) {
     try {
-      await axios.post('/logout')
+      await axios.post('/public/logout')
     } catch (e) { }
 
     Cookies.remove('token')

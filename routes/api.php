@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/','IndexController');
-
+Route::get('/video/{id}',"VideoController");
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', 'Auth\LoginController@logout');

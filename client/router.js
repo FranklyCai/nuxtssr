@@ -7,6 +7,7 @@ Vue.use(Router)
 const Home = () => import('~/pages/home').then(m => m.default || m)
 const Welcome = () => import('~/pages/welcome').then(m => m.default || m)
 const Index = () => import('@/pages/index').then(m => m.default || m)
+const Video = () => import('@/pages/video/_id').then(m => m.default || m)
 const Login = () => import('~/pages/auth/login').then(m => m.default || m)
 const Register = () => import('~/pages/auth/register').then(m => m.default || m)
 const PasswordReset = () => import('~/pages/auth/password/reset').then(m => m.default || m)
@@ -19,7 +20,7 @@ const SettingsPassword = () => import('~/pages/settings/password').then(m => m.d
 const routes = [
   { path: '/', name: 'index', component: Index },
   { path: '/home', name: 'home', component: Home },
-
+  { path: '/video/:id', name: 'video', component: Video },
   { path: '/login', name: 'login', component: Login },
   { path: '/register', name: 'register', component: Register },
   { path: '/password/reset', name: 'password.request', component: PasswordRequest },
