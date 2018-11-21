@@ -5,7 +5,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 export default ({ app, store, redirect }) => {
   axios.defaults.baseURL = process.env.apiUrl
-
+    axios.defaults.credentials = false
   if (process.server) {
     return
   }

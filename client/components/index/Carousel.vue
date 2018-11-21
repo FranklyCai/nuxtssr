@@ -48,7 +48,7 @@
                 this.flag = !this.flag;
                 setTimeout(()=>{
                     document.querySelector('.in').style.backgroundImage=
-                        `url(http://localhost/client/static/${this.bgImages[this.currentIndex]})`;
+                        `url(${this.$store.state.address}/client/static/${this.bgImages[this.currentIndex]})`;
                 },0)
             }
         },
@@ -60,7 +60,7 @@
         mounted(){
             this.slide();
             document.querySelector('.in').style.backgroundImage=
-                `url(http://localhost/client/static/${this.bgImages[this.currentIndex]})`;
+                `url(${this.$store.state.address}/client/static/${this.bgImages[this.currentIndex]})`;
         }
     }
 </script>

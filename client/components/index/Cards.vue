@@ -4,12 +4,12 @@
             <template v-for="type of types">
                 <div class="subject">
                     <div class="theme">
-                        <img :src="'http://localhost/client/static/img/'+type.ename+'.png'" :alt="type.cname"/>
+                        <img :src="address+'/client/static/img/'+type.ename+'.png'" :alt="type.cname"/>
                         <span class="title">{{type.cname}}</span>
                     </div>
                     <div class="card-wrap">
                         <div v-for="s of subjects[type.ename]" class="item" :data-url="s.url" @click="play">
-                            <img :src="'http://localhost/client/static/'+s.img" :alt="s.title">
+                            <img :src="address+'/client/static/'+s.img" :alt="s.title">
                             <div class="item-body">
                                 <h6 :title="s.title">{{s.title}}</h6>
                                 <span :title="s.desc">{{s.desc}}</span>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
     export default {
         name: "Card",
         props: {
@@ -35,6 +36,7 @@
                 required: true
             }
         },
+        computed:mapState(['address']),
         methods:{
             play(e){
                 if('url' in e.currentTarget.dataset){

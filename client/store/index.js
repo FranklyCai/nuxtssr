@@ -1,6 +1,10 @@
 import Cookies from 'js-cookie'
 import { cookieFromRequest } from '~/utils'
 
+export const state = ()=> ({
+    address:'http://localhost/laravel-nuxt'
+})
+
 export const actions = {
   nuxtServerInit ({ commit }, { req }) {
     const token = cookieFromRequest(req, 'token')
