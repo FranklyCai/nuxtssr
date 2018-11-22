@@ -17,7 +17,7 @@ export default ({ app, store, redirect }) => {
     const token = store.getters['auth/token']
 
     if (token) {
-      request.headers.common['Authorization'] = `Bearer ${token}`
+      // request.headers.common['Authorization'] = `Bearer ${token}`
     }
 
     const locale = store.getters['lang/locale']

@@ -1,5 +1,8 @@
 {
+    "name": "cretueusebiu/laravel-nuxt",
+    "description": "A Laravel-Nuxt starter project template.",
     "keywords": ["laravel", "nuxt", "vue", "spa"],
+    "license": "MIT",
     "type": "project",
     "require": {
         "php": "^7.1.3",

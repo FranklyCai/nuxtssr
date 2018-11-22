@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt -c client/nuxt.config.js",
+    "dev-debug": "node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build -c client/nuxt.config.js",
     "start": "nuxt start -c client/nuxt.config.js",
     "lint": "vue-cli-service lint client/"

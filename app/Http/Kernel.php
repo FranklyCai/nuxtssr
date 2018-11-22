@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\PreflightResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -14,13 +15,17 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
+        /*这一行没有chrome的插件有用
+        在不开启这个中间件的情况下还是无法跨域请求
+        开启了浏览器插件不用这中间件也一切正常
+        */
+//        \Barryvdh\Cors\HandleCors::class,
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\SetLocale::class,
-        \Barryvdh\Cors\HandleCors::class
     ];
 
     /**

@@ -18,7 +18,7 @@ module.exports = {
   srcDir: __dirname,
 
   env: {
-    apiUrl: process.env.APP_URL || 'http://api.laravel-nuxt.test',
+    apiUrl: process.env.APP_URL || 'http://localhost/laravel-nuxt',
     appName: process.env.APP_NAME || 'Laravel-Nuxt',
     appLocale: process.env.APP_LOCALE || 'en',
     githubAuth: !!process.env.GITHUB_CLIENT_ID
@@ -68,6 +68,11 @@ module.exports = {
   ],
 
   build: {
-    extractCSS: true
+    extractCSS: true,
+      extend (config, { isDev, isClient }) {
+          if (isDev) {
+              config.devtool = 'eval-source-map'  // Something you like
+          }
+      }
   }
 }
